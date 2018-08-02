@@ -86,6 +86,16 @@ class TestFriends < MiniTest::Test
     assert_equal(true, result)
   end
 
+  def test_check_food_capitalised
+    result = likes_to_eat(@person2, "Bread")
+    assert_equal(true, result)
+  end
+
+  def test_check_food_wrong_case
+    result = likes_to_eat(@person3, "scooby snacks")
+    assert_equal(true, result)
+  end
+
 
   # 4. For a given person, add a new name to their list of friends
   # (e.g. the function add_friend(@person2, "Scrappy-Doo") should add Scrappy-Doo to the friends.)

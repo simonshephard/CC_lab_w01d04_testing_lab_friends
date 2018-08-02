@@ -7,8 +7,12 @@ def get_tv_show(person)
 end
 
 def likes_to_eat(person, food)
-  array = person[:favourites][:snacks]
-  return array.include?(food)
+  favourite_snacks = person[:favourites][:snacks]
+  included = false
+  for snack in favourite_snacks
+    included = true if snack.downcase == food.downcase
+  end
+  return included
 end
 
 def add_friend(person, friend)
